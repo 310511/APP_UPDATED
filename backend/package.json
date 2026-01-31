@@ -1,0 +1,46 @@
+{
+  "name": "skip-on-backend",
+  "version": "1.0.0",
+  "description": "Socket.IO server for Skip On chat feature",
+  "main": "socketio-skip-on-server.js",
+  "scripts": {
+    "start": "node socket-server.js",
+    "start:engage": "node engage-server.js",
+    "start:engage:refactored": "node engage-server-refactored.js",
+    "dev:engage": "nodemon engage-server.js",
+    "dev:engage:refactored": "nodemon engage-server-refactored.js",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop engage-server",
+    "pm2:restart": "pm2 restart engage-server",
+    "pm2:logs": "pm2 logs engage-server",
+    "pm2:delete": "pm2 delete engage-server",
+    "start:no-redis": "node socket-server-no-redis.js",
+    "start:old": "node socketio-skip-on-server.js",
+    "dev": "nodemon socket-server.js",
+    "dev:ip": "python -m uvicorn server:socket_app --host 172.20.139.243 --port 3001 --reload",
+    "dev:ip:engage": "cd .. && npm run start:engage",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "socket.io",
+    "websocket",
+    "chat",
+    "matchmaking"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@socket.io/redis-adapter": "^8.3.0",
+    "chess.js": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "redis": "^4.7.0",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
