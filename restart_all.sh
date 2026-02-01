@@ -79,7 +79,7 @@ sleep 2
 
 # Start Frontend
 echo "📱 Starting Frontend..."
-open_terminal "Frontend" "npm start" "$PROJECT_DIR/frontend (1)"
+open_terminal "Frontend" "npm start" "$PROJECT_DIR/frontend"
 
 sleep 3
 
